@@ -86,10 +86,12 @@ Assumptions:
         ```RegexPrinter.py```
         ```utils.py```
         In order to use the module please run the main.py file (with the relevant input).
-        For encapsulation the class inside the RegexPrinter.py file.
+        For encapsulation the class inside the RegexPrinter.py file:
+        
         ```class RegexPrinter(object)``` -> Base Class
         ```class RegexPrinterByColor(RegexPrinter)```
         ```class RegexPrinterMachine(RegexPrinter)```
+        
         The ```unitls.py``` file parse the input paramters.
 
 
