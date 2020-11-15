@@ -20,9 +20,9 @@ The project includes the following files:
 
 /Docker/
 
-Makefile
-Dockerfile
-docker-compose.yml
+        Makefile
+        Dockerfile
+        docker-compose.yml
 
 /Docker/src/
         main.py
