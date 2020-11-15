@@ -7,7 +7,7 @@ How to use:
 Once you are in your developing environment pull this project from git or just copy all the project into your machine.
 Once you have all the project, go to Docker folder and simply run:
 
-Makefile build -> Which build your image contrainer environment for the first time with all python necessary modules described  
+Makefile build -> Which build your image container environment for the first time with all python necessary modules described  
 
 Makefile run
 
