@@ -92,9 +92,8 @@ Assumptions:
         class RegexPrinterByColor(RegexPrinter)
         class RegexPrinterMachine(RegexPrinter)
       The ```unitls.py``` file parse the input paramters.
-
-10.     I created 19 unittests within 4 files. ```test_input_args.py``` testing some input combinations.
-        and the other three tests the correct output for regular/colored/machine output.
+10.    I created 19 unittests within 4 files. ```test_input_args.py``` testing some input combinations.
+       and the other three tests the correct output for regular/colored/machine output.
 
 
 
