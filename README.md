@@ -82,16 +82,15 @@ Assumptions:
 7.	I read each file in parallel using the threading module. Thus that in case of large number of files (without dependencies) it will be faster with the python GIL mechanism.
 8.	I read each file line by line and not using the 'realines' function, thus because the fact that files can be large and we will enter memory usage problems.
 9.	I split the the project objects for three:
-    ```main.py```
-    ```RegexPrinter.py```
-    ```utils.py```
-In order to use the module please run the main.py file (with the relevant input).
-For encapsulation the class inside the RegexPrinter.py file.
-```class RegexPrinter(object)``` -> Base Class
-```class RegexPrinterByColor(RegexPrinter)```
-```class RegexPrinterMachine(RegexPrinter)```
-
-The ```unitls.py``` file parse the input paramters.
+        ```main.py```
+        ```RegexPrinter.py```
+        ```utils.py```
+        In order to use the module please run the main.py file (with the relevant input).
+        For encapsulation the class inside the RegexPrinter.py file.
+        ```class RegexPrinter(object)``` -> Base Class
+        ```class RegexPrinterByColor(RegexPrinter)```
+        ```class RegexPrinterMachine(RegexPrinter)```
+        The ```unitls.py``` file parse the input paramters.
 
 
 
