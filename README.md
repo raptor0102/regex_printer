@@ -18,7 +18,8 @@ build and run
 If you run ```docker-compose up``` the first time everything works fine, however, when you change the code after the first time, the changes will not reflect in the container that runs. This is because upon each ```docker-compose up``` command, compose will look for lasters taged image (that already exists) and does not build a new image and creates a container based on the old one. As we need that image name and tag to publish/deploy our image, we need to instead use:
 
 ```docker-compose up --build```
-It will re-build an image with the changes reflected. Every time you make some changes, run it and a new fresh image is created that can be seen with (note that although the name and tag remain unchanged, change in image id shows that this is a new image):
+It will re-build an image with the changes reflected. Every time you make some changes, run it and a new fresh image is created that can be seen with (note that although the name and tag remain unchanged, changes can be found in the image id that this is a new image):
+Currently ```Makefile run``` will generate a new fresh image and use this image on the container and execute all the unittests suite I created.
 
 
 The project includes the following files:
@@ -79,6 +80,18 @@ Assumptions:
 6.	While the user determines to send colder such as: -c, the color can be either: -c BLUE, -c blue or -c 34 -c Blue, -c blUE, -c BLue etc. if the value is not valid correct message will be sent to the user.
 7.	I read each file in parallel using the threading module. Thus that in case of large number of files (without dependencies) it will be faster with the python GIL mechanism.
 8.	I read each file line by line and not using the 'realines' function, thus because the fact that files can be large and we will enter memory usage problems.
+9.	I split the the project objects for three:
+    ```main.py```
+    ```RegexPrinter.py```
+    ```utils.py```
+In order to use the module please run the main.py file (with the relevant input).
+For encapsulation the class inside the RegexPrinter.py file.
+```class RegexPrinter(object)``` -> Base Class
+```class RegexPrinterByColor(RegexPrinter)```
+```class RegexPrinterMachine(RegexPrinter)```
+
+The ```unitls.py``` file parse the input paramters.
+
 
 
 
