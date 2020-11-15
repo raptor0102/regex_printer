@@ -1,28 +1,6 @@
 # regex_printer
 Search for matching regex in files and print the result
 
-As requested I provided a Makefile and to run the project you should easily use ```Makefile build``` and ```Makefile run```.
-How to use:
-
-Once you are in your developing environment pull this project from git or just copy all the project into your machine.
-Once you have all the project, go to Docker folder and simply run:
-
-```Makefile build``` -> Which build your image container environment for the first time with all python necessary modules described  
-then run:
-        ```Makefile run```
-
-Then, for every change in your code (regex_printer tool or in the tests) you can simply run again:
-        ```Makefile run```
-
-build and run
-If I run ```docker-compose up``` the first time everything works fine, however, when one change the code after the first time, the changes will not reflect in the container that runs. This is because upon each ```docker-compose up``` command, compose will look for lasters taged image (that already exists) and does not build a new image and creates a container based on the old one. As I need that image name and tag to publish/deploy my image, I instead use:
-
-```docker-compose up --build```
-It will re-build an image with the changes reflected. Every time one make some changes, I will run ```docker-compose up --build``` and a new fresh image is created that can be seen with ```docker images```. (although the name and tag remain unchanged, changes can be found in the image id that this is a fresh new image).
-
-Currently ```Makefile run``` will generate a new fresh image and use this image to run the container which executing all the unittests suite I created.
-
-
 The project includes the following files:
 
 /Docker/
@@ -65,6 +43,27 @@ The project includes the following files:
         dummy_output4_no_color.txt
         dummy_output4_with_color.txt
 
+As you requested I provided a Makefile and to run the project you should easily use ```Makefile build``` and ```Makefile run```.
+How to use:
+
+Once you are in your developing environment pull this project from git or just copy all the project into your machine.
+Once you have all the project, go to Docker folder and simply run:
+
+```Makefile build``` -> Which build your image container environment for the first time with all python necessary modules described  
+then run:
+        ```Makefile run```
+
+Then, for every change in your code (regex_printer tool or in the tests) you can simply run again:
+        ```Makefile run```
+
+build and run
+If I run ```docker-compose up``` the first time everything works fine, however, when one change the code after the first time, the changes will not reflect in the container that runs. This is because upon each ```docker-compose up``` command, compose will look for lasters taged image (that already exists) and does not build a new image and creates a container based on the old one. As I need that image name and tag to publish/deploy my image, I instead use:
+
+```docker-compose up --build```
+It will re-build an image with the changes reflected. Every time one make some changes, I will run ```docker-compose up --build``` and a new fresh image is created that can be seen with ```docker images```. (although the name and tag remain unchanged, changes can be found in the image id that this is a fresh new image).
+
+Currently ```Makefile run``` will generate a new fresh image and use this image to run the container which executing all the unittests suite I created.
+
 
 Assumptions:
 
@@ -92,7 +91,7 @@ Assumptions:
         class RegexPrinterByColor(RegexPrinter)
         class RegexPrinterMachine(RegexPrinter)
       The ```unitls.py``` file parse the input paramters.
-10.    I created 19 unittests within 4 files. ```test_input_args.py``` testing some input combinations.
+10.    I created 19 unittests within 4 files (some of them uses some files input, they are also attached). ```test_input_args.py``` testing some input combinations.
        and the other three tests the correct output for regular/colored/machine output. They are all being executed by ```python -m unittest``` command.
 
 
