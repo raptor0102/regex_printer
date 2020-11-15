@@ -28,6 +28,8 @@ The project includes the following files:
         Makefile
         Dockerfile
         docker-compose.yml
+        requirements.txt
+        deploy.env
 
 /Docker/src/
 
@@ -61,26 +63,23 @@ The project includes the following files:
         dummy_output4_no_color.txt
         dummy_output4_with_color.txt
 
-1. search_regex_in_file_script.py
-2. Makefile
-3. Dockerfile
-4. requirements.txt # which include the requirements for the non standard python library required for the project
+
 Assumptions:
 
-Part 1:
+1.	When receiving as an input only file/files and regex, the output will be to the standard output while each match is printed in different line.
+2.	When receiving as an input file/files, regex and a color, the output will be to the standard output while all text matches within a single line will be colored the single line.
+3.	When receiving as an input file/files, regex and a machine flag, the output will be to the standard output as in machine formatted you requested.
+4.	The argparse Module of python will execute all the input correctness such as: 
+•	file/s are existing and in 'read' mode permission.
+•	At least single file provided.
+•	The regex expression is valid.
+•	The -c and -m inputs are mutually_exclusived as requested.
+•	Correctness for the color.
+5.	-m/--machine flag can be sent both as a unique value such as -m without any follow indicating parameter and also as a follow parameter which can be any given true signal such as: 'yes', 'true', 't', 'y', '1', 'True'. All are handled.
+6.	While the user determines to send colder such as: -c, the color can be either: -c BLUE, -c blue or -c 34 -c Blue, -c blUE, -c BLue etc. if the value is not valid correct message will be sent to the user.
+7.	I read each file in parallel using the threading module. Thus that in case of large number of files (without dependencies) it will be faster with the python GIL mechanism.
+8.	I read each file line by line and not using the 'realines' function, thus because the fact that files can be large and we will enter memory usage problems.
 
-1. When receiving as an input only file/files and regex, the output will be to the standard output while each match is printed in different line.
-2. When receiving as an input file/files, regex and a color, the output will be to the standard output while all text matches will be colored inside the full line print.
-3. When receiving as an input file/files, regex and a machine flag, the output will be to the standard output as in machine formatted you requested.
-4. -m/--machine flag only indicates of True/False input. Without any additional parameters.
-5. While the user determine to send colder such as: -c, the color can be either: -c BLUE, -c blue or -c 34.
-6. All the combinations of the inputs from the command line is done by the argparse. most code is in function: handling_cmd_args.
-7. I print only suffix filename that out  or your full file name full output to the standard out file names as in they were  output I printed then
-8. I created
-9. I read each file in parallel, in case of large number of files (without dependencies) it will be faster with the python GIL mechanism.
 
 
-Part 2:
-
-1. My AWS is noy valid any more. I used it more than a year, for I tryied to work on TBM could.
 
