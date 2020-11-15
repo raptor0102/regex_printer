@@ -1,0 +1,5 @@
+dummy_input1.txt:1:0:ain
+dummy_input1.txt:1:5:ain
+dummy_input1.txt:5:0:ain
+dummy_input1.txt:5:3:ain
+dummy_input1.txt:5:6:ain

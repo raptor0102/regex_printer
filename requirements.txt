@@ -1,0 +1,2 @@
+###### Requirements with Version Specifiers ######`
+colorama >= 0.3.7            # Minimum version 0.3.7

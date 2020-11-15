@@ -1,0 +1,8 @@
+dummy_input2.txt:34 56:3:3
+dummy_input2.txt:34 56:3:4
+dummy_input2.txt:34 56:3:5
+dummy_input2.txt:34 56:3:6
+dummy_input2.txt:3456:4:3
+dummy_input2.txt:3456:4:4
+dummy_input2.txt:3456:4:5
+dummy_input2.txt:3456:4:6

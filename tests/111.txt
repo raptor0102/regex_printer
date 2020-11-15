@@ -1,0 +1,8 @@
+usage:
+required inputs:
+	 1. -f/--file (lower case) Referred for one single or multiple input files path
+	 2. -r/--regex (lower case) Which Regex should the script use for the searching
+optional inputs (mutually_exclusive - only one of them can be sent at a time):
+	 1. [-c/--color] (lower case) which highlight matching text
+	 2. [-m/--machine] (lower case) which generate machine-readable output
+test_print_regex_1.py: error: argument -r/--regex: Error in function validate_regex: The regex expression is not valid
