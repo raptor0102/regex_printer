@@ -8,11 +8,11 @@ Once you are in your developing environment pull this project from git or just c
 Once you have all the project, go to Docker folder and simply run:
 
 Makefile build -> Which build your image container environment for the first time with all python necessary modules described  
-
-Makefile run
+then run:
+        Makefile run
 
 Then, for every change in your code (regex_printer tool or in the tests) you can simply run again:
-Makefile run
+        Makefile run
 
 build and run
 If you run 'docker-compose up' the first time everything works fine, however, when you change the code after the first time, the changes will not reflect in the container that runs. This is because upon each docker-compose up command, compose will look for lasters taged image (that already exists) and does not build a new image and creates a container based on the old one. As we need that image name and tag to publish/deploy our image, we need to instead use:
